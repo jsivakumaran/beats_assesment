@@ -1,7 +1,21 @@
 <h1> Beats </h1>
+<br>
+
+<h4>Search Beats</h4>
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <input ng-model="query" type="text" class="form-control" placeholder="Search">
+  </div>
+</form>
+
+<br>
+
 <ul>
-  <li ng-repeat="item in beats">
+  <li ng-repeat="item in beats | filter:query">
     {{item.title}} <a ui-sref="reporters({beatId: item.id})"><small>Add Reporter</small></a>
+    <ul>
+      <li ng-repeat="item in item.reporters | filter:query" ng-hide="$last">{{item.name}}</li>
+    </ul>
   </li>
 </ul>
 <a ui-sref = "addBeat">Add a beat</a>
