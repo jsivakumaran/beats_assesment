@@ -1,4 +1,4 @@
-var beats = angular.module('beats', ['ui.router', 'firebase']);
+var beats = angular.module('beats', ['ui.router', 'firebase', 'ui.bootstrap']);
 
 beats.config(function($stateProvider){
   $stateProvider.state('beatsList', {
@@ -12,5 +12,11 @@ beats.config(function($stateProvider){
     templateUrl: "partials/addBeat.html",
     controller: 'beatsCtrl',
   });
+
+  $stateProvider.state('reporters', {
+    url:"/:beatId",
+    templateUrl: "partials/reporters.html",
+    controller: "reporterCtrl",
+  })
 
 });

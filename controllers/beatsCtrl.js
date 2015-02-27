@@ -7,4 +7,6 @@ function beatsCtrl($scope, $state, beatsFactory){
     beatsFactory.addBeat();
     $state.go('beatsList');
   }
+
+
 }]);
