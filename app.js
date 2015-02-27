@@ -4,6 +4,7 @@ beats.config(function($stateProvider){
   $stateProvider.state('beatsList', {
     url: "",
     templateUrl: "partials/beatsList.html",
+    controller: "beatsCtrl"
   });
 
   $stateProvider.state('addBeat', {
