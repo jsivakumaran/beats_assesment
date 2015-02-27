@@ -5,5 +5,11 @@ beats.config(function($stateProvider){
     url: "",
     templateUrl: "partials/beatsList.html",
   });
-  
+
+  $stateProvider.state('addBeat', {
+    url: "/add",
+    templateUrl: "partials/addBeat.html",
+    controller: 'beatsCtrl',
+  });
+
 });
