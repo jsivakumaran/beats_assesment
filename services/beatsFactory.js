@@ -11,7 +11,8 @@ function beatsFactory($firebase, $stateParams, utilitiesFactory){
   };
 
   factory.addReporter = function(beatId, name, years, birthdate){
-    beat = utilitiesFactory.findById(factory.beats, $stateParams.beatId);
+    var beat = utilitiesFactory.findById(factory.beats, $stateParams.beatId);
+    var birthdate = birthdate.toString();
     var reporter = {beatId: beat.id, name: name, years: years, birthdate: birthdate}
     var newNum = (beat.reporters.reporterNum+1);
     // debugger;

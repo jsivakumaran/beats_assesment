@@ -6,8 +6,8 @@ function reporterCtrl($scope, $state, $stateParams, $firebase, beatsFactory){
 
 
   $scope.addReporter = function(){
-    alert($stateParams.beatId);
     beatsFactory.addReporter($stateParams.beatId, $scope.name, $scope.years, $scope.birthdate);
+      $state.go('beatsList');
   }
 
 }]);
